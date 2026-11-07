@@ -1,0 +1,26 @@
+{
+  "name": "dsh-whale-reasoning",
+  "version": "1.2.1",
+  "private": true,
+  "description": "DeepSeek Harness 自适应模型/推理等级弹框：高清鲸鱼娘插画、实时粒子滑条与跨模型能力适配",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": { ".": "./lib/index.js", "./client": "./lib/client.js", "./package.json": "./package.json" },
+  "files": ["lib", "cordis.patch.yml", "README.md", "NOTICE.md", "asset-manifest.json", "LICENSE", "docs/INSTALL.md", "docs/ARTWORK.md", "docs/images"],
+  "engines": { "node": ">=22.19.0 || >=24.0.0", "dsh": ">=0.2.0-rc.1 <0.3.0-0" },
+  "keywords": ["dsh", "dsh-plugin", "deepseek-harness", "reasoning-effort", "whale"],
+  "scripts": {
+    "build": "node scripts/build-assets.mjs",
+    "test": "node --test test/client.test.mjs test/host.test.mjs",
+    "test:browser": "node test/browser.mjs",
+    "check:public": "node scripts/check-public.mjs",
+    "pack:release": "node scripts/pack-release.mjs"
+  },
+  "devDependencies": { "playwright": "1.62.1", "react": "18.3.1", "react-dom": "18.3.1", "sharp": "0.35.5" },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": { "platform": "web", "inject": ["@deepseek-ai/dsh-client-ui-conversation", "@deepseek-ai/dsh-client-ui-model-selection", "@deepseek-ai/dsh-client-locale"] }
+  }
+}

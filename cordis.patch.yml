@@ -1,0 +1,4 @@
+# This bundle inserts itself once; do not duplicate this entry in the profile patch.
+- insert:
+    - id: whale-reasoning
+      name: dsh-whale-reasoning

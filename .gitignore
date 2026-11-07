@@ -1,0 +1,16 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+coverage/
+.npm-cache/
+*.log
+.env
+.env.*
+!.env.example
+.whale-reasoning/
+.dsh/
+debug-user-event.json
+.DS_Store
+Thumbs.db
+*.local.*
